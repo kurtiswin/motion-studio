@@ -1,0 +1,77 @@
+/* Quiet Studio design tokens
+   Load fonts (free substitutes):
+   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400&family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet">
+*/
+
+:root {
+  /* Colour */
+  --paper: #ffffff;
+  --ink: #000000;
+  --ink-warm: #090705;      /* dark section + footer */
+  --muted: #6e6e6c;         /* subtitles, meta */
+  --faint: #8c8c8a;         /* dates (darkened from original for contrast) */
+  --glass: rgba(204, 204, 204, 0.25);
+  --glass-dark: rgba(255, 255, 255, 0.18);
+  --btn-soft: #f0f0f0;
+
+  /* Type */
+  --font-sans: "Helvetica Neue", "Inter Tight", Helvetica, Arial, sans-serif;
+  --font-serif: "Hedvig Letters Serif", Georgia, serif;
+  --fs-h1: clamp(40px, 3.7vw, 53px);
+  --fs-h2: 30px;
+  --fs-card: 18px;
+  --fs-body: 15px;
+  --fs-small: 13px;
+  --fs-quote: 20px;
+
+  /* Geometry */
+  --radius: 8px;
+  --gutter: 5px;
+  --container: 1194px;
+  --page-pad: clamp(18px, 8.5vw, 123px);
+  --narrow: 360px;
+  --section-gap: clamp(120px, 14vw, 220px);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 0.8s;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-font-smoothing: antialiased; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 var(--fs-body)/1.2 var(--font-sans);
+}
+
+h1, h2, h3 { font-weight: 400; margin: 0; }
+h1 { font-size: var(--fs-h1); line-height: 1; letter-spacing: -0.02em; }
+h2 { font-size: var(--fs-h2); line-height: 1.2; letter-spacing: -0.02em; }
+h3 { font-size: var(--fs-card); line-height: 1.2; letter-spacing: -0.01em; }
+
+.container { max-width: var(--container); margin-inline: auto; padding-inline: var(--page-pad); }
+@media (min-width: 1440px) { .container { padding-inline: 0; } }
+.narrow { max-width: var(--narrow); margin-inline: auto; text-align: center; }
+.muted { color: var(--muted); }
+
+/* Tailwind equivalent (tailwind.config.js -> theme.extend)
+{
+  colors: { paper:'#fff', ink:'#000', 'ink-warm':'#090705', muted:'#6e6e6c', faint:'#8c8c8a' },
+  fontFamily: { sans:['"Helvetica Neue"','"Inter Tight"','Helvetica','Arial','sans-serif'],
+                serif:['"Hedvig Letters Serif"','Georgia','serif'] },
+  fontSize: { h1:['53px',{lineHeight:'1',letterSpacing:'-0.02em'}],
+              h2:['30px',{lineHeight:'1.2',letterSpacing:'-0.02em'}],
+              card:['18px',{lineHeight:'1.2',letterSpacing:'-0.01em'}],
+              quote:['20px',{lineHeight:'1.4',letterSpacing:'-0.01em'}] },
+  borderRadius: { DEFAULT:'8px' },
+  spacing: { gutter:'5px' },
+  maxWidth: { container:'1194px', narrow:'360px' },
+  transitionTimingFunction: { quiet:'cubic-bezier(.22,1,.36,1)' },
+}
+*/
