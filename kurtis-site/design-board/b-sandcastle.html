@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept B · Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&display=swap">
+<style>
+/* Concept B — "Studio": floating pill nav, huge regular-weight headline, small line under,
+   then big rounded media tiles with a title + one quiet line. After sandcastle.studio. */
+:root{
+  --bg:#000; --bg-alt:#0b0b0b; --surface:#151515; --surface-2:#222; --line:rgba(255,255,255,.14);
+  --text:#fff; --muted:#a9a9a9; --gold:#FFC65C;
+  --sans:"Helvetica Neue",Helvetica,"Hanken Grotesk",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.45;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:10px}
+.g{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.inner{max-width:1180px;margin:0 auto}
+
+/* nav */
+.nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:0;right:0;z-index:10;display:flex;justify-content:center;gap:10px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.nav .links,.nav .cta{display:flex;align-items:center;gap:4px;height:44px;padding:0 6px;border-radius:12px;background:rgba(38,38,38,.72);
+  backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%)}
+.nav .links a{padding:0 10px;height:36px;display:grid;place-items:center;border-radius:8px;font-size:16px}
+.nav .links a:hover{background:rgba(255,255,255,.08)}
+.nav .cta{padding:0 16px;background:var(--gold);color:#000;font-weight:500;font-size:16px}
+
+/* hero */
+.hero{padding-block:clamp(140px,22vh,220px) clamp(48px,8vh,88px);text-align:center}
+h1{font-weight:400;font-size:clamp(3.4rem,10vw,8rem);letter-spacing:-.035em;line-height:.98;margin:0;text-wrap:balance}
+.sub{max-width:36ch;margin:24px auto 0;font-size:clamp(1.1rem,2vw,1.45rem);color:var(--text);text-wrap:balance}
+
+.media{border-radius:14px;overflow:hidden;position:relative;background:#0a0a0a}
+.film{aspect-ratio:16/9;max-width:100%}
+.film .placeholder{position:absolute;inset:0;
+  background:radial-gradient(70% 90% at 50% -10%,rgba(255,198,92,.5),transparent 60%),linear-gradient(180deg,#22201a 0%,#101010 60%,#0c160f 100%);
+  animation:breathe 12s ease-in-out infinite alternate}
+.film .pitch{position:absolute;left:-15%;right:-15%;bottom:-35%;height:75%;background:repeating-linear-gradient(90deg,#123a20 0 60px,#15442a 60px 120px);
+  transform:perspective(600px) rotateX(58deg)}
+.slot{position:absolute;top:14px;left:14px;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#000;background:var(--gold);padding:6px 10px;border-radius:999px}
+@keyframes breathe{to{filter:brightness(1.18)}}
+
+.intro{padding-block:clamp(88px,14vh,160px);text-align:center}
+.intro p{max-width:38ch;margin:0 auto;font-size:clamp(1.15rem,2vw,1.5rem);text-wrap:balance}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:10px;background:var(--surface-2);font-size:16px;margin-top:28px}
+.btn:hover{background:#2e2e2e}
+
+h2{font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.03em;text-align:center;margin:0 0 40px}
+.projects{display:grid;gap:56px;padding-bottom:clamp(88px,14vh,160px)}
+@media (min-width:860px){.projects{grid-template-columns:1fr 1fr;gap:40px 24px}.projects .wide{grid-column:1/-1}}
+.proj .media{aspect-ratio:4/3;max-width:100%}
+.proj.wide .media{aspect-ratio:16/8}
+.proj .art{position:absolute;inset:0;display:grid;place-items:center}
+.proj .art span{font-size:clamp(3rem,10vw,7rem);letter-spacing:-.04em}
+.a1{background:radial-gradient(80% 80% at 30% 20%,#3a2a12,#120d06 70%)} .a1 span{color:var(--gold)}
+.a2{background:radial-gradient(80% 80% at 70% 20%,#183824,#08120c 70%)}
+.a3{background:radial-gradient(80% 80% at 50% 10%,#2a2a2a,#0a0a0a 70%)} .a3 span{font-style:italic}
+.proj h3{font-weight:400;font-size:24px;margin:16px 0 2px;letter-spacing:-.01em}
+.proj p{margin:0;color:var(--muted);font-size:18px}
+.tags{display:flex;gap:8px;margin-bottom:12px}
+.tags span{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+
+.why{background:var(--bg-alt);min-height:88vh;display:grid;place-items:center;text-align:center;padding-block:120px}
+.why .kicker{font-size:15px;color:var(--muted);margin:0 0 18px}
+.why p.big{font-size:clamp(1.5rem,3.2vw,2.4rem);max-width:24ch;margin:0 auto;text-wrap:balance;letter-spacing:-.01em}
+.why p.big em{font-style:normal;color:var(--gold)}
+.why img{width:150px;height:150px;object-fit:cover;border-radius:14px;margin:44px auto 0;display:block}
+.why small{display:block;margin-top:12px;color:var(--muted);font-size:14px}
+
+.join{padding-block:clamp(88px,14vh,160px);text-align:center}
+.join p{color:var(--muted);font-size:18px;margin:0 auto;max-width:40ch}
+form{display:flex;gap:8px;max-width:520px;margin:32px auto 0;flex-wrap:nowrap}
+label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+input{flex:1 1 0;min-width:0;height:52px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--text);padding:0 16px;font:inherit;font-size:17px}
+input::placeholder{color:#8c8c8c}
+button{height:52px;padding:0 22px;border-radius:10px;border:0;background:var(--text);color:#000;font:inherit;font-size:17px;font-weight:500;cursor:pointer}
+.ok{color:var(--gold);margin-top:16px}
+
+footer{border-top:1px solid var(--line);padding-block:32px 72px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:15px}
+footer nav{display:flex;gap:18px}
+
+.rise{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}.d1{animation-delay:.12s}.d2{animation-delay:.26s}
+@keyframes rise{from{opacity:.001;transform:translateY(16px)}}
+@media (prefers-reduced-motion:reduce){.rise,.film .placeholder{animation:none}html{scroll-behavior:auto}}
+@media (max-width:420px){.nav .links a{padding:0 7px;font-size:15px}.nav .cta{padding:0 12px;font-size:15px}}
+
+.back{position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));font-size:12px;letter-spacing:.04em;
+  background:rgba(30,30,30,.85);backdrop-filter:blur(8px);padding:8px 12px;border-radius:999px;color:var(--muted);z-index:5}
+</style>
+</head>
+<body>
+<header class="nav">
+  <nav class="links" aria-label="Main"><a href="#top">Home</a><a href="#work">Work</a><a href="#why">Why</a><a href="#join">Contact</a></nav>
+  <a class="cta" href="#join">Join</a>
+</header>
+
+<main id="top">
+  <section class="hero g" aria-labelledby="h">
+    <div class="inner">
+      <h1 id="h" class="rise">Telling beautiful stories.</h1>
+      <p class="sub rise d1">I build cool things with people around football, coffee, community and culture.</p>
+    </div>
+  </section>
+
+  <div class="g"><div class="inner">
+    <div class="media film rise d2">
+      <!-- <video src="film.mp4" poster="film.jpg" autoplay muted loop playsinline></video> -->
+      <div class="placeholder" aria-hidden="true"><div class="pitch"></div></div>
+      <span class="slot">Your film here</span>
+    </div>
+  </div></div>
+
+  <section class="intro g">
+    <div class="inner">
+      <p>Coffee that funds dreams, a grassroots club that changes lives, and conversations that connect the world. Different things, one idea: everyone has a beautiful story to tell.</p>
+      <a class="btn" href="#why">About me</a>
+    </div>
+  </section>
+
+  <section class="g" id="work" aria-labelledby="work-h">
+    <div class="inner">
+      <h2 id="work-h">What I'm building</h2>
+      <div class="projects">
+        <a class="proj wide" href="#">
+          <div class="media"><div class="art a1" aria-hidden="true"><span>Java Bonito</span></div><span class="slot">Product photo</span></div>
+          <h3>Java Bonito</h3><p>Coffee for football. 5% of every bag sold goes back to support dreams.</p>
+        </a>
+        <a class="proj" href="#">
+          <div class="media"><div class="art a2" aria-hidden="true"><span>Woolton</span></div><span class="slot">Club photo</span></div>
+          <h3>Woolton FC</h3><p>Coaching at the largest grassroots football club in the UK.</p>
+        </a>
+        <a class="proj" href="#">
+          <div class="media"><div class="art a3" aria-hidden="true"><span>Stories</span></div><span class="slot">Episode still</span></div>
+          <h3>Stories from Football</h3><p>Connecting the world through conversation.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="why g" id="why" aria-labelledby="why-k">
+    <div class="inner">
+      <p class="kicker" id="why-k">Why</p>
+      <p class="big">The injured nine year old me would have wanted people to do what I couldn't. <em>Chase their dreams.</em></p>
+      <img src="assets/nine-year-old-me.jpg" alt="Kurtis aged nine, standing in a hallway with a bandaged ankle">
+      <small>Me, aged nine.</small>
+    </div>
+  </section>
+
+  <section class="join g" id="join" aria-labelledby="join-h">
+    <div class="inner">
+      <h2 id="join-h">Join the club</h2>
+      <p>New stories the day they're out, plus behind the scenes on everything I'm building. No spam.</p>
+      <form data-kit>
+        <label class="sr" for="b-email">Email address</label>
+        <input id="b-email" type="email" name="email_address" placeholder="name@email.com" autocomplete="email" required>
+        <button type="submit">Sign up</button>
+      </form>
+      <p class="ok" hidden>You're in. Check your inbox to confirm.</p>
+    </div>
+  </section>
+
+  <footer class="g"><div class="inner" style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <span>© 2026 Kurtis Windrow</span><nav aria-label="Social"><a href="#">YouTube</a><a href="#">Instagram</a></nav>
+  </div></footer>
+</main>
+<a class="back" href="index.html">← Design board</a>
+<script>
+document.querySelectorAll('form[data-kit]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.hidden=true;f.nextElementSibling.hidden=false;}));
+</script>
+</body>
+</html>
