@@ -43,3 +43,5 @@
 
 - 2026-11-06: v8: signup icons reduced to People, Places, The build (one line on phones 375px+).
 
+- 2026-11-06: v9: centred 'What to expect' label added under the video, above the three icons.
+
