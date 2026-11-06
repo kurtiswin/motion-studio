@@ -37,3 +37,5 @@
 - 2026-11-06: v3: avatar removed; pills show icon + @kurtiswin; story text white, 'nine' gold; real logos as link icons (JB monogram from Java Bonito wordmark, Woolton badge round, SFF ball mark), centred on the words; signup labels centred; footer privacy link removed.
 - 2026-11-06: v4: 'nine' back to white serif; story column 39ch with larger desktop size (7 lines on laptop, links each on their own line); JB icon = full wordmark in a black square like the javabonito.co.uk favicon; pills and Sign up button black with a gold ring on hover (button lifts, arrow slides); video card 700px on desktop, like Dalen's (a little wider than the text).
 - 2026-11-06: v5: hero dropped lower with more space between headline, pills and story; video/signup card black with a hairline border; project icons zoom and twist on hover (own version, as danieldalen.com was blocked from the session).
+- 2026-11-06: v6: social icons redrawn as brand outlines (gold default, white option via #white). Kit: owner setting up an Inline form; ID still needed.
+
