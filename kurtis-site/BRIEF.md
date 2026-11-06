@@ -39,3 +39,5 @@
 - 2026-11-06: v5: hero dropped lower with more space between headline, pills and story; video/signup card black with a hairline border; project icons zoom and twist on hover (own version, as danieldalen.com was blocked from the session).
 - 2026-11-06: v6: social icons redrawn as brand outlines (gold default, white option via #white). Kit: owner setting up an Inline form; ID still needed.
 
+- 2026-11-06: v7: gold outline social icons chosen (white option removed). Signup labels now 8 gold outline icons in order: People, Places, Stories, The build, Coffee, Community, Football, Filmmaking (2 per row on phone, 4 per row from 720px).
+
