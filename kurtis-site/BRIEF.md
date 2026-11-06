@@ -45,3 +45,5 @@
 
 - 2026-11-06: v9: centred 'What to expect' label added under the video, above the three icons.
 
+- 2026-11-06: Board turned into the KurtisWin brand board (concepts B and C removed). Site page renamed design-board/site.html.
+

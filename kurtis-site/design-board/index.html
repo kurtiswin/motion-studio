@@ -2,162 +2,138 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap">
 <style>
-/* Board: one dark column; palette + type up top, then three concept columns with scrollable phone previews. */
+/* KurtisWin brand board: one black column. Header, foundations (colour, type, pieces), then the site itself on phone and laptop. */
 :root{
-  --bg:#000; --surface:#111; --surface-2:#1c1c1c; --line:rgba(255,255,255,.12);
+  --bg:#000; --panel:#000; --line:rgba(255,255,255,.12);
   --text:#fff; --muted:#b3b3b3; --gold:#FFC65C;
-  --sans:"Geist",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --sans:"Poppins",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
   --serif:"Instrument Serif",Georgia,serif;
-  --mono:"Geist Mono",ui-monospace,Menlo,monospace;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.5;
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;font-weight:400;line-height:1.55;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
-.wrap{max-width:1240px;margin:0 auto;padding-block:56px 80px;display:flex;flex-direction:column;gap:64px}
-.label{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
-h1{font-weight:400;font-size:clamp(2.4rem,6vw,4.4rem);letter-spacing:-.04em;line-height:1;margin:0;text-wrap:balance}
-h1 em{font-family:var(--serif);font-style:italic;color:var(--gold)}
-.intro{color:var(--muted);max-width:60ch;margin:16px 0 0;font-size:17px}
+.wrap{max-width:1180px;margin:0 auto;padding-block:72px 96px;display:flex;flex-direction:column;gap:56px}
+.label{font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
 
-.foundations{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
-.panel{background:var(--surface);border-radius:20px;padding:24px;min-width:0}
+header{text-align:center;display:flex;flex-direction:column;align-items:center}
+h1{font-weight:600;font-size:clamp(2.6rem,8vw,5rem);letter-spacing:-.035em;line-height:1.02;margin:0;text-wrap:balance}
+h1 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--gold);font-size:1.12em;line-height:.9;letter-spacing:-.01em}
+.intro{color:var(--muted);max-width:52ch;margin:24px 0 0;font-size:17px;font-weight:300;text-wrap:pretty}
+
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.panel{background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);border-radius:24px;padding:26px;min-width:0}
+.panel h2{margin:0 0 18px}
+
 .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.sw{display:flex;flex-direction:column;gap:8px;font-family:var(--mono);font-size:11px;color:var(--muted);min-width:0}
-.sw i{display:block;aspect-ratio:1;border-radius:12px;border:1px solid var(--line)}
+.sw{display:flex;flex-direction:column;gap:8px;font-size:11px;color:var(--muted);min-width:0;line-height:1.4}
+.sw i{display:block;aspect-ratio:1;border-radius:14px;box-shadow:inset 0 0 0 1px var(--line)}
+.sw b{color:var(--text);font-weight:500}
+.rule{margin-top:18px;font-size:14px;color:var(--muted);font-weight:300}
+
 .type p{margin:0}
-.type .t1{font-size:34px;font-weight:600;letter-spacing:-.04em}
-.type .t2{font-family:var(--serif);font-style:italic;font-size:36px;color:var(--gold);line-height:1.1}
-.type .t3{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:8px}
-.type .t4{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:30px;letter-spacing:-.03em;margin-top:14px}
-.type small{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:2px}
-.parts{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.pill{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px 0 12px;border-radius:999px;background:var(--surface-2);font-size:14px;font-weight:500}
-.pill svg{width:18px;height:18px}
-.chip{display:inline-flex;align-items:center;gap:6px;font-weight:500}
-.chip b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:7px;font-size:11px;font-weight:600}
-.btn{height:44px;padding:0 20px;border-radius:14px;background:var(--gold);color:#000;display:inline-grid;place-items:center;font-weight:600;font-size:15px}
+.type .t1{font-size:38px;font-weight:600;letter-spacing:-.035em;line-height:1.1}
+.type .t2{font-family:var(--serif);font-style:italic;font-size:42px;color:var(--gold);line-height:1.1;margin-top:14px}
+.type .t3{font-size:17px;font-weight:300;margin-top:14px}
+.type .t4{font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:14px}
+.type small{display:block;font-size:12px;color:var(--muted);margin-top:2px}
 
-.concepts{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
-.concept{background:var(--surface);border-radius:24px;padding:20px;display:flex;flex-direction:column;gap:16px;min-width:0}
-.concept.pick{box-shadow:inset 0 0 0 1.5px var(--gold)}
-.head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
-.head h2{margin:0;font-weight:500;font-size:22px;letter-spacing:-.02em}
-.tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.pick .tag{color:#000;background:var(--gold);padding:4px 9px;border-radius:999px}
-.phone{height:560px;overflow-y:auto;border-radius:22px;border:1px solid var(--line);background:#000;overscroll-behavior:contain}
-.phone img{display:block;width:100%;height:auto}
-.concept ul{margin:0;padding:0 0 0 18px;color:var(--muted);font-size:15px;display:grid;gap:6px}
-.concept ul strong{color:var(--text);font-weight:500}
-.open{margin-top:auto;display:inline-flex;justify-content:center;align-items:center;height:48px;border-radius:14px;background:var(--surface-2);text-decoration:none;font-weight:500}
-.open:hover{background:#262626}
-.pick .open{background:var(--gold);color:#000}
+.parts{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.row{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 18px 0 14px;border-radius:999px;background:#000;
+  box-shadow:0 0 0 1px var(--line);font-size:15px;font-weight:500;text-decoration:none;transition:box-shadow .25s}
+.pill:hover{box-shadow:0 0 0 2px var(--gold)}
+.pill svg{width:20px;height:20px;color:var(--gold)}
+.chip{font-weight:500;text-decoration:none;white-space:nowrap}
+.chip img{display:inline-block;width:1.4em;height:1.4em;margin-right:.35em;border-radius:.38em;vertical-align:-.36em;background:#000;
+  box-shadow:0 0 0 1px var(--line);transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+.chip img.round{border-radius:50%;box-shadow:none}
+.chip:hover img{transform:scale(1.22) rotate(-8deg)}
+.topics{display:flex;flex-wrap:wrap;gap:12px 22px}
+.topics span{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.topics svg{width:20px;height:20px;color:var(--gold)}
+.btn{height:52px;padding:0 18px 0 20px;border-radius:16px;background:#000;color:#fff;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;flex:0 0 auto;
+  box-shadow:0 0 0 1px var(--line);transition:box-shadow .25s,transform .25s cubic-bezier(.2,.7,.2,1)}
+.btn:hover{box-shadow:0 0 0 2px var(--gold);transform:translateY(-2px)}
+.field{height:52px;flex:1 1 0;min-width:0;border-radius:16px;background:#0a0a0a;box-shadow:inset 0 0 0 1px var(--line);display:flex;align-items:center;padding:0 16px;color:#8a8a8a;overflow:hidden;white-space:nowrap}
+.form{display:flex;gap:10px;width:100%}
 
-.next{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
-.next h3{margin:0 0 10px;font-weight:500;font-size:18px}
-.next ol,.next ul{margin:0;padding-left:18px;color:var(--muted);display:grid;gap:6px}
-.next strong{color:var(--text);font-weight:500}
-.icon-opts{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
-.opt{display:flex;flex-direction:column;gap:10px;text-decoration:none;padding:14px;border-radius:16px;background:#000;box-shadow:inset 0 0 0 1px var(--line)}
-.opt:hover{box-shadow:inset 0 0 0 2px var(--gold)}
-.opt img{width:100%;max-width:360px;height:auto}
-.opt span{font-size:15px}.opt em{font-style:normal;color:var(--muted)}
+.site{display:grid;gap:20px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:880px){.site{grid-template-columns:340px minmax(0,1fr);align-items:start}}
+.phone{height:640px;overflow-y:auto;border-radius:28px;box-shadow:inset 0 0 0 1px var(--line);background:#000;overscroll-behavior:contain}
+.phone img,.laptop img{display:block;width:100%;height:auto}
+.laptop{border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+.cap{font-size:12px;color:var(--muted);margin:10px 0 0}
+.open{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 22px;border-radius:16px;background:#000;box-shadow:0 0 0 1px var(--line);
+  text-decoration:none;font-weight:600;margin-top:20px;transition:box-shadow .25s}
+.open:hover{box-shadow:0 0 0 2px var(--gold)}
+@media (prefers-reduced-motion:reduce){.chip img,.btn,.pill,.open{transition:none}.chip:hover img,.btn:hover{transform:none}}
 </style>
 
 <main class="wrap">
   <header>
-    <p class="label">Personal brand · Design board · v9 · Concept A chosen</p>
+    <p class="label">KurtisWin · Personal brand design board</p>
     <h1>Telling <em>beautiful</em> stories.</h1>
-    <p class="intro">Three directions for your new site. Same colours as your Carrd draft (black, white, gold), same words, three different moods. Scroll inside each phone, or open the live page.</p>
+    <p class="intro">The look and feel of everything KurtisWin: black, white and one touch of gold, Poppins with a serif italic for the words that matter, and plenty of space. Use it for the website, socials, thumbnails, Java Bonito, Stories from Football and anything else that's yours.</p>
   </header>
 
-  <section class="foundations" aria-label="Foundations">
+  <section class="grid" aria-label="Foundations">
     <div class="panel">
-      <p class="label">Colour</p>
+      <h2 class="label">Colour</h2>
       <div class="swatches">
-        <div class="sw"><i style="background:#000"></i>#000000<br>Background</div>
-        <div class="sw"><i style="background:#131313"></i>#131313<br>Card</div>
-        <div class="sw"><i style="background:#fff"></i>#FFFFFF<br>Text</div>
-        <div class="sw"><i style="background:#FFC65C"></i>#FFC65C<br>Gold</div>
+        <div class="sw"><i style="background:#000"></i><b>Black</b>#000000<br>Background</div>
+        <div class="sw"><i style="background:#fff"></i><b>White</b>#FFFFFF<br>Text</div>
+        <div class="sw"><i style="background:#FFC65C"></i><b>Gold</b>#FFC65C<br>Accent</div>
+        <div class="sw"><i style="background:rgba(255,255,255,.12)"></i><b>Line</b>White 12%<br>Borders</div>
       </div>
+      <p class="rule">Gold is the accent, never the background: one word in a headline, icons and the hover ring.</p>
     </div>
     <div class="panel type">
-      <p class="label">Type</p>
-      <p class="t1" style="font-family:Poppins,sans-serif;letter-spacing:-.035em">Poppins</p><small>Concept A headline and body</small>
-      <p class="t2">beautiful</p><small>Instrument Serif italic, for feeling words</small>
-      <p class="t4">Helvetica, regular</p><small>Concept B, the Sandcastle look</small>
-      <p class="t3">Geist Mono · labels &amp; small print</p>
+      <h2 class="label">Type</h2>
+      <p class="t1">Poppins SemiBold</p><small>Headlines</small>
+      <p class="t2">beautiful</p><small>Instrument Serif italic, for one or two feeling words</small>
+      <p class="t3">Poppins Light for the story and body text.</p><small>Body</small>
+      <p class="t4">Poppins Medium · labels</p><small>Uppercase labels, widely spaced</small>
     </div>
     <div class="panel">
-      <p class="label">Pieces</p>
+      <h2 class="label">Pieces</h2>
       <div class="parts">
-        <span class="pill"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="5" fill="#FF0033"/><path d="M10 8.5v7l6-3.5z" fill="#fff"/></svg>YouTube</span>
-        <span class="pill"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6" fill="none" stroke="#D62976" stroke-width="2.2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="#FA7E1E" stroke-width="2.2"/></svg>Instagram</span>
-        <span class="chip"><b style="background:#FFC65C;color:#000">JB</b>Java Bonito</span>
-        <span class="chip"><b style="background:#fff;color:#000">W</b>Woolton FC</span>
-        <span class="chip"><b style="color:#FFC65C;box-shadow:inset 0 0 0 1.5px #FFC65C">S</b>Stories from Football</span>
-        <span class="btn">Sign up</span>
+        <div class="row">
+          <a class="pill" href="https://youtube.com/@kurtiswin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4.5"/><path d="M10.2 9.2v5.6l4.8-2.8z" fill="currentColor"/></svg>@kurtiswin</a>
+          <a class="pill" href="https://www.instagram.com/kurtiswin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>@kurtiswin</a>
+        </div>
+        <div class="row">
+          <a class="chip" href="https://www.javabonito.co.uk" target="_blank" rel="noopener"><img src="assets/icon-jb.png" alt="">Java Bonito</a>
+          <a class="chip" href="https://www.wooltonfc.co.uk" target="_blank" rel="noopener"><img class="round" src="assets/icon-wfc.png" alt="">Woolton FC</a>
+          <a class="chip" href="https://www.storiesfromfootball.co.uk" target="_blank" rel="noopener"><img src="assets/icon-sff.png" alt="">Stories from Football</a>
+        </div>
+        <div class="topics">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/><circle cx="17" cy="9" r="2.4"/><path d="M16.2 14.6c2.6.3 4.3 2.5 4.3 5.4"/></svg>People</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.8-6.5-11a6.5 6.5 0 0 1 13 0c0 5.2-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Places</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg>The build</span>
+        </div>
+        <div class="form"><span class="field">name@email.com</span><span class="btn">Sign up <span aria-hidden="true">→</span></span></div>
       </div>
+      <p class="rule">Everything sits on black with a thin outline. On hover: a gold ring, and the project icons zoom and twist.</p>
     </div>
   </section>
 
-  <section aria-label="Concepts">
-    <p class="label">Concepts</p>
-    <div class="concepts">
-      <article class="concept pick">
-        <div class="head"><h2>A · Personal letter</h2><span class="tag">Chosen · v9</span></div>
-        <div class="phone" tabindex="0" aria-label="Concept A phone preview, scrollable"><img src="shots/a-dalen-phone.jpg" alt="Concept A on a phone: logo mark, bold headline, social pills, story paragraph with project links, film card and signup" loading="lazy"></div>
-        <ul>
-          <li><strong>v4:</strong> wider story text, Java Bonito logo as its site icon, black pills and button with a gold ring on hover.</li>
-          <li>All links live: YouTube, Instagram, Java Bonito, Woolton FC, Stories from Football.</li>
-          <li>Your four clips stitched into one silent looping film, then a simple sign-up.</li>
-        </ul>
-        <a class="open" href="a-dalen.html">Open concept A</a>
-      </article>
-      <article class="concept">
-        <div class="head"><h2>B · Studio</h2><span class="tag">Sandcastle</span></div>
-        <div class="phone" tabindex="0" aria-label="Concept B phone preview, scrollable"><img src="shots/b-sandcastle-phone.jpg" alt="Concept B on a phone: floating nav, large regular-weight headline, wide film, project tiles, why section and signup" loading="lazy"></div>
-        <ul>
-          <li><strong>Floating pill nav</strong> and a huge, light headline with one small line.</li>
-          <li>Big photo tiles for each project (needs good photos).</li>
-          <li>Quietest of the three; gold used only for the Join button.</li>
-        </ul>
-        <a class="open" href="b-sandcastle.html">Open concept B</a>
-      </article>
-      <article class="concept">
-        <div class="head"><h2>C · Hybrid</h2><span class="tag">Sandcastle + Dalen</span></div>
-        <div class="phone" tabindex="0" aria-label="Concept C phone preview, scrollable"><img src="shots/c-hybrid-phone.jpg" alt="Concept C on a phone: floating nav, large headline with gold serif word, linked story line, social pills, film, project list, why with childhood photo, signup card" loading="lazy"></div>
-        <ul>
-          <li><strong>Sandcastle's hero</strong>: big headline, small line under, lots of space.</li>
-          <li><strong>Daniel's pills and inline project links</strong> in that small line.</li>
-          <li>Film, project list, your "why" with the nine-year-old photo, then the Join the club card.</li>
-        </ul>
-        <a class="open" href="c-hybrid.html">Open concept C</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="next" aria-label="Next steps">
-    <div class="panel">
-      <h3>To pick</h3>
-      <ol>
-        <li><strong>Which concept</strong>, or which parts of each.</li>
-        <li><strong>The small line</strong>: the short "football, coffee, community and culture" version (B, C) or the story version starting at nine (A).</li>
-        <li>Gold on "beautiful", or keep the headline all white?</li>
-      </ol>
-    </div>
-    <div class="panel">
-      <h3>To send me</h3>
-      <ul>
-        <li><strong>Your film</strong> (MP4, 10–30 s; I'll compress it so it autoplays fast).</li>
-        <li>YouTube and Instagram links, plus Java Bonito and Stories from Football URLs.</li>
-        <li>Your Kit (ConvertKit) form ID, so sign-ups go straight in.</li>
-        <li>Logos or icons for each project, and a photo or two of you.</li>
-      </ul>
+  <section class="panel" aria-labelledby="site-h">
+    <h2 class="label" id="site-h">The website</h2>
+    <div class="site">
+      <div>
+        <div class="phone" tabindex="0" aria-label="Phone view of the site, scrollable"><img src="shots/site-phone.jpg" alt="The KurtisWin site on a phone: headline, social pills, story with project links, film and email sign-up" loading="lazy"></div>
+        <p class="cap">Phone · scroll inside</p>
+      </div>
+      <div>
+        <div class="laptop"><img src="shots/site-laptop.jpg" alt="The KurtisWin site on a laptop" loading="lazy"></div>
+        <p class="cap">Laptop</p>
+        <a class="open" href="site.html">Open the site <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </section>
 </main>
