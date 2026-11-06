@@ -41,3 +41,5 @@
 
 - 2026-11-06: v7: gold outline social icons chosen (white option removed). Signup labels now 8 gold outline icons in order: People, Places, Stories, The build, Coffee, Community, Football, Filmmaking (2 per row on phone, 4 per row from 720px).
 
+- 2026-11-06: v8: signup icons reduced to People, Places, The build (one line on phones 375px+).
+
