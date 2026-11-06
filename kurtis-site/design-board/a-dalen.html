@@ -6,127 +6,101 @@
 <title>Concept A · Personal letter</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap">
 <style>
-/* Concept A — "Personal letter": one narrow centred column, heavy tight headline,
-   serif italics for feeling words, mono for the small print. After danieldalen.com. */
+/* Concept A v2 — "Personal letter": one narrow centred column, Poppins throughout,
+   serif italics in gold/white for feeling words only. After danieldalen.com. */
 :root{
   --bg:#000; --surface:#121212; --surface-2:#1b1b1b; --line:rgba(255,255,255,.12);
   --text:#fff; --muted:#b8b8b8; --gold:#FFC65C;
-  --display:"Geist",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --sans:"Poppins",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
   --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
-  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--display);font-weight:400;line-height:1.5;overflow-x:clip;
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;line-height:1.5;overflow-x:clip;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
-.wrap{max-width:760px;margin:0 auto;padding-block:clamp(72px,12vh,128px) 48px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.wrap{max-width:760px;margin:0 auto;padding-block:clamp(64px,11vh,120px) 48px;display:flex;flex-direction:column;align-items:center;text-align:center}
 
-.mark{width:64px;height:64px;color:var(--gold)}
-h1{font-size:clamp(3.1rem,11vw,5.8rem);font-weight:600;letter-spacing:-.045em;line-height:.98;margin:32px 0 0;text-wrap:balance}
-h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.02em;color:var(--gold)}
+.avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;display:block;
+  box-shadow:0 0 0 1px rgba(255,198,92,.35),0 12px 40px rgba(255,140,40,.12)}
+h1{font-size:clamp(2.9rem,10.5vw,5.4rem);font-weight:600;letter-spacing:-.035em;line-height:1.02;margin:28px 0 0;text-wrap:balance}
+h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.01em;color:var(--gold);font-size:1.12em;line-height:.9}
 
-.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px}
 .pill{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 18px 0 14px;border-radius:999px;background:var(--surface-2);
   text-decoration:none;font-size:15px;font-weight:500;transition:background .2s}
 .pill:hover{background:#262626}
 .pill svg{width:20px;height:20px;flex:none}
 
-.story{margin-top:36px;font-size:clamp(1.12rem,2.6vw,1.4rem);line-height:1.6;color:var(--muted);max-width:34ch;text-wrap:pretty}
-.story i{font-family:var(--serif);font-size:1.18em;color:var(--text);letter-spacing:-.005em}
-.chip{display:inline-flex;align-items:center;gap:6px;color:var(--text);text-decoration:none;font-weight:500;white-space:nowrap}
+.story{margin:34px 0 0;font-size:clamp(1.05rem,2.4vw,1.3rem);font-weight:300;line-height:1.75;color:var(--muted);max-width:34ch;text-wrap:pretty}
+.story i{font-family:var(--serif);font-size:1.22em;line-height:1;color:var(--text)}
+/* Inline project links: plain inline text so commas sit right against them. */
+.chip{color:var(--text);text-decoration:none;font-weight:500;white-space:nowrap}
 .chip:hover{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:4px}
-.chip b{display:inline-grid;place-items:center;width:2em;height:2em;border-radius:7px;font-size:.6em;font-weight:700;letter-spacing:-.02em;transform:translateY(-1px)}
+.chip b{display:inline-block;width:1.45em;height:1.45em;line-height:1.45em;margin-right:.3em;border-radius:.4em;
+  text-align:center;vertical-align:-.2em;font-size:.82em;font-weight:600;letter-spacing:-.02em}
 .c-jb b{background:var(--gold);color:#000}
 .c-wfc b{background:#fff;color:#000}
-.c-sff b{background:transparent;color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold)}
+.c-sff b{color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold)}
 
 /* Film + signup card */
-.card{width:100%;margin-top:64px;border-radius:32px;overflow:hidden;background:var(--surface);text-align:left}
-.film{position:relative;aspect-ratio:16/10;max-width:100%;background:#0a0a0a;overflow:hidden}
-.film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.film .placeholder{position:absolute;inset:0;
-  background:
-    radial-gradient(60% 80% at 20% 0%,rgba(255,198,92,.55),transparent 60%),
-    radial-gradient(50% 70% at 85% 10%,rgba(255,230,180,.35),transparent 60%),
-    linear-gradient(180deg,#1d1a14 0%,#0d0f0c 55%,#0b1a10 100%);
-  animation:drift 14s ease-in-out infinite alternate}
-.film .pitch{position:absolute;left:-10%;right:-10%;bottom:-30%;height:70%;border-radius:50%/40%;
-  background:repeating-linear-gradient(90deg,#133d22 0 48px,#164a29 48px 96px);transform:perspective(500px) rotateX(55deg);opacity:.9}
-.film .slot{position:absolute;top:16px;right:16px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-  color:#000;background:var(--gold);padding:6px 10px;border-radius:999px}
-.film .cap{position:absolute;left:16px;bottom:16px;right:16px;width:fit-content;max-width:calc(100% - 32px);background:rgba(0,0,0,.6);
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:9px 16px;border-radius:999px;font-size:15px}
-@keyframes drift{to{filter:hue-rotate(-12deg) brightness(1.15);transform:scale(1.06)}}
+.card{width:100%;margin-top:60px;border-radius:32px;overflow:hidden;background:var(--surface);text-align:left}
+.film{position:relative;aspect-ratio:4/3;max-width:100%;background:#0a0a0a;overflow:hidden}
+.film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 
-.signup{padding:clamp(24px,5vw,44px)}
-.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
-.expect{list-style:none;margin:0;padding:0}
-.expect li{display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:13px;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.expect li strong{color:var(--text);font-weight:500}
-.expect svg{width:18px;height:18px;flex:none;color:var(--gold)}
-form{display:flex;gap:10px;margin-top:28px;flex-wrap:nowrap}
-label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.signup{padding:clamp(22px,5vw,40px)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.expect{list-style:none;margin:0;padding:0 0 18px;display:flex;gap:28px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.expect li{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.expect svg{width:20px;height:20px;flex:none;color:var(--gold)}
+form{display:flex;gap:10px;margin-top:22px}
 input{flex:1 1 0;min-width:0;height:56px;border-radius:16px;border:1px solid var(--line);background:#0a0a0a;color:var(--text);
-  padding:0 18px;font:inherit;font-size:17px}
+  padding:0 18px;font:inherit;font-size:16px}
 input::placeholder{color:#8a8a8a}
-button{height:56px;padding:0 26px;border-radius:16px;border:0;background:var(--gold);color:#000;font:inherit;font-size:17px;font-weight:600;cursor:pointer;flex:0 0 auto}
+button{height:56px;padding:0 24px;border-radius:16px;border:0;background:var(--gold);color:#000;font:inherit;font-size:16px;font-weight:600;cursor:pointer;flex:0 0 auto}
 button:hover{filter:brightness(1.06)}
 .ok{margin:14px 0 0;font-size:15px;color:var(--gold)}
 
-footer{margin-top:56px;font-size:15px;color:#8f8f8f;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+footer{margin-top:52px;font-size:14px;color:#8f8f8f;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 footer a{text-decoration:none}
 
-/* load-in */
 .rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}.d4{animation-delay:.42s}
 @keyframes rise{from{opacity:.001;transform:translateY(18px)}}
-@media (prefers-reduced-motion:reduce){.rise,.film .placeholder{animation:none}}
+@media (prefers-reduced-motion:reduce){.rise{animation:none}}
 
-.back{position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+.back{position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));font-size:11px;letter-spacing:.08em;text-transform:uppercase;
   background:rgba(30,30,30,.85);backdrop-filter:blur(8px);padding:8px 12px;border-radius:999px;text-decoration:none;color:var(--muted);z-index:5}
 </style>
 </head>
 <body>
 <main class="wrap" id="main">
-  <svg class="mark rise" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
-    <circle cx="32" cy="32" r="28"/><path d="M14 40c8-14 28-14 36 0M20 26c6-6 18-6 24 0" stroke-linecap="round"/>
-  </svg>
+  <img class="avatar rise" src="assets/avatar.jpg" alt="Kurtis doing keepy-ups at sunset by the sea" width="96" height="96">
 
   <h1 class="rise d1">Telling <em>beautiful</em> stories.</h1>
 
   <nav class="pills rise d2" aria-label="Social">
-    <a class="pill" href="#" target="_blank" rel="noopener">
+    <a class="pill" href="https://youtube.com/@kurtiswin" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="5" fill="#FF0033"/><path d="M10 8.5v7l6-3.5z" fill="#fff"/></svg>YouTube</a>
-    <a class="pill" href="#" target="_blank" rel="noopener">
+    <a class="pill" href="https://www.instagram.com/kurtiswin" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".35" stop-color="#FA7E1E"/><stop offset=".65" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="none" stroke="url(#ig)" stroke-width="2.2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="url(#ig)" stroke-width="2.2"/><circle cx="17.4" cy="6.6" r="1.3" fill="#D62976"/></svg>Instagram</a>
   </nav>
 
-  <p class="story rise d3">
-    I got injured at <i>nine</i> and never got to chase the dream. So now I build things that help other people chase theirs:
-    <a class="chip c-jb" href="#"><b>JB</b>Java&nbsp;Bonito</a>, coffee that gives 5% back to football,
-    <a class="chip c-wfc" href="#"><b>W</b>Woolton&nbsp;FC</a>, where I coach at the UK's biggest grassroots club, and
-    <a class="chip c-sff" href="#"><b>S</b>Stories&nbsp;from&nbsp;Football</a>, because everyone has a <i>beautiful</i> story to tell.
-  </p>
+  <p class="story rise d3">I got injured at <i>nine</i> and never got to chase the dream. So now I build things that help other people chase theirs: <a class="chip c-jb" href="https://www.javabonito.co.uk" target="_blank" rel="noopener"><b>JB</b>Java&nbsp;Bonito</a>, coffee that gives 5% back to football, <a class="chip c-wfc" href="#"><b>W</b>Woolton&nbsp;FC</a>, where I coach at the UK's biggest grassroots club, and <a class="chip c-sff" href="https://www.storiesfromfootball.co.uk" target="_blank" rel="noopener"><b>S</b>Stories&nbsp;from&nbsp;Football</a>, because everyone has a <i>beautiful</i> story to tell.</p>
 
   <section class="card rise d4" id="join" aria-labelledby="join-h">
     <div class="film">
-      <!-- Swap the placeholder for: <video src="film.mp4" poster="film.jpg" autoplay muted loop playsinline></video> -->
-      <div class="placeholder" aria-hidden="true"><div class="pitch"></div></div>
-      <span class="slot">Your film here</span>
-      <span class="cap">Same pitch, every Saturday. Liverpool.</span>
+      <video src="assets/film.mp4" poster="assets/film-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Short film: making coffee and coaching at Woolton FC"></video>
     </div>
     <div class="signup">
-      <h2 class="eyebrow" id="join-h">Join the club</h2>
+      <h2 class="sr" id="join-h">Join the club</h2>
       <ul class="expect">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg><span><strong>Stories</strong> _ the day they're out</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg><span><strong>The build</strong> _ wins, fails &amp; numbers</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><strong>No spam</strong> _ one-click unsubscribe</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg>Stories</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>The build</li>
       </ul>
       <form data-kit>
         <label class="sr" for="a-email">Email address</label>
