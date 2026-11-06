@@ -49,12 +49,12 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:
 @media (prefers-reduced-motion:reduce){.chip img{transition:none}.chip:hover img,.chip:focus-visible img{transform:none}}
 
 /* Film + signup card */
-.card{width:100%;margin-top:60px;text-align:left}
-@media (min-width:900px){.card{margin-top:72px}}
+.card{width:100%;margin-top:46px;text-align:left}
+@media (min-width:900px){.card{margin-top:52px}}
 .film{position:relative;aspect-ratio:4/3;width:100%;margin:0;border-radius:24px;background:#0a0a0a;overflow:hidden}
 .film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 
-.signup{padding:16px 0 0}
+.signup{padding:0 0 36px}
 .eyebrow{margin:0 0 18px;text-align:center;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .expect{list-style:none;margin:0;padding:0 0 18px;display:flex;gap:16px 26px;flex-wrap:wrap;justify-content:center;border-bottom:1px solid var(--line)}
@@ -101,9 +101,6 @@ footer a{text-decoration:none}
   <p class="story rise d3">I got injured at <i>nine</i> and never got to chase the dream. So now I build things that help other people chase theirs: <a class="chip c-jb" href="https://www.javabonito.co.uk" target="_blank" rel="noopener"><img src="assets/icon-jb.png" alt="">Java&nbsp;Bonito</a>, coffee that gives 5% back to support dreams, <a class="chip c-wfc" href="https://www.wooltonfc.co.uk" target="_blank" rel="noopener"><img class="round" src="assets/icon-wfc.png" alt="">Woolton&nbsp;FC</a>, where I coach at the largest grassroots club in the UK, and <a class="chip c-sff" href="https://www.storiesfromfootball.co.uk" target="_blank" rel="noopener"><img src="assets/icon-sff.png" alt="">Stories&nbsp;from&nbsp;Football</a>, because everyone has a <i>beautiful</i> story to tell.</p>
 
   <section class="card rise d4" id="join" aria-labelledby="join-h">
-    <div class="film">
-      <video src="assets/film.mp4" poster="assets/film-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Short film: making coffee and coaching at Woolton FC"></video>
-    </div>
     <div class="signup">
       <h2 class="sr" id="join-h">Join the club</h2>
       <form data-kit>
@@ -112,6 +109,9 @@ footer a{text-decoration:none}
         <button type="submit">Sign up <span class="arr" aria-hidden="true">→</span></button>
       </form>
       <p class="ok" hidden>You're in. Check your inbox to confirm.</p>
+    </div>
+    <div class="film">
+      <video src="assets/film.mp4" poster="assets/film-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Short film: making coffee and coaching at Woolton FC"></video>
     </div>
   </section>
 

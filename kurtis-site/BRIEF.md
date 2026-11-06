@@ -53,3 +53,5 @@
 
 - 2026-11-06: Single 620px column: headline, story, video and email form share the same edges; card frame removed.
 
+- 2026-11-06: Trial: email sign-up moved above the video (between story and video). Skill not updated until confirmed.
+
