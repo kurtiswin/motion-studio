@@ -22,14 +22,16 @@
 - Why: to transform lives through football. The injured 9 year old me would have wanted people to do what I couldn't... chase their dreams. (Photo: nine year old me.)
 
 ## Not yet available (labelled slots, don't invent)
-- Woolton FC URL, Kit form ID, project logos.
+- Kit form ID.
 
 ## Links
 - YouTube: https://youtube.com/@kurtiswin
 - Instagram: https://www.instagram.com/kurtiswin
 - Java Bonito: https://www.javabonito.co.uk
 - Stories from Football: https://www.storiesfromfootball.co.uk
+- Woolton FC: https://www.wooltonfc.co.uk
 
 ## Decisions log
 - 2026-11-06: Design board v1 with concepts A (Dalen), B (Sandcastle), C (hybrid, recommended).
 - 2026-11-06: Chose concept A. v2: profile photo as darkened round avatar (replaces mark), Poppins for all text with Instrument Serif italic kept for 'beautiful' (gold) and 'nine', inline link icons re-aligned, film = 4 clips stitched into one silent 42s loop (4:3), caption removed, visible 'Join the club' heading removed, signup list reduced to 'Stories' and 'The build' on one line.
+- 2026-11-06: v3: avatar removed; pills show icon + @kurtiswin; story text white, 'nine' gold; real logos as link icons (JB monogram from Java Bonito wordmark, Woolton badge round, SFF ball mark), centred on the words; signup labels centred; footer privacy link removed.
