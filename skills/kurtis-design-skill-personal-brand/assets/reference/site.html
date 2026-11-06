@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept A · Personal letter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap">
+<style>
+/* Concept A v2 — "Personal letter": one narrow centred column, Poppins throughout,
+   serif italics in gold/white for feeling words only. After danieldalen.com. */
+:root{
+  --bg:#000; --surface:#121212; --surface-2:#1b1b1b; --line:rgba(255,255,255,.12);
+  --text:#fff; --muted:#b8b8b8; --gold:#FFC65C;
+  --sans:"Poppins",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;line-height:1.5;overflow-x:clip;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+.wrap{max-width:760px;margin:0 auto;padding-block:clamp(110px,18vh,190px) 48px;display:flex;flex-direction:column;align-items:center;text-align:center}
+
+h1{font-size:clamp(2.9rem,10.5vw,5.4rem);font-weight:600;letter-spacing:-.035em;line-height:1.02;margin:0;text-wrap:balance}
+h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.01em;color:var(--gold);font-size:1.12em;line-height:.9}
+
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:40px}
+.pill{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 18px 0 14px;border-radius:999px;background:#000;
+  box-shadow:0 0 0 1px var(--line);text-decoration:none;font-size:15px;font-weight:500;transition:box-shadow .25s ease}
+.pill:hover{box-shadow:0 0 0 2px var(--gold)}
+.pill svg{width:20px;height:20px;flex:none;color:var(--gold);transition:color .25s}
+
+
+.story{margin:46px 0 0;font-size:clamp(1.05rem,2.4vw,1.5rem);font-weight:300;line-height:1.75;color:var(--text);max-width:39ch;text-wrap:pretty}
+.story i{font-family:var(--serif);font-size:1.22em;line-height:1;color:var(--text)}
+.story i.gold{color:var(--gold)}
+/* Inline project links: plain inline text so commas sit right against them. */
+.chip{color:var(--text);text-decoration:none;font-weight:500;white-space:nowrap}
+.chip:hover{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:4px}
+.chip img{display:inline-block;width:1.4em;height:1.4em;margin-right:.35em;border-radius:.38em;object-fit:cover;
+  vertical-align:-.36em;background:#000;box-shadow:0 0 0 1px var(--line)}
+.chip img.round{border-radius:50%;box-shadow:none}
+.chip img{transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+.chip:hover img,.chip:focus-visible img{transform:scale(1.22) rotate(-8deg)}
+@media (prefers-reduced-motion:reduce){.chip img{transition:none}.chip:hover img,.chip:focus-visible img{transform:none}}
+
+/* Film + signup card */
+.card{width:100%;max-width:100%;margin-top:60px;border-radius:32px;overflow:hidden;background:#000;box-shadow:inset 0 0 0 1px var(--line);text-align:left}
+@media (min-width:900px){.card{width:700px;max-width:none;margin-top:72px}.card .signup{max-width:680px;margin:0 auto}}
+.film{position:relative;aspect-ratio:4/3;max-width:100%;background:#0a0a0a;overflow:hidden}
+.film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+
+.signup{padding:clamp(22px,5vw,40px)}
+.eyebrow{margin:0 0 18px;text-align:center;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.expect{list-style:none;margin:0;padding:0 0 18px;display:flex;gap:16px 26px;flex-wrap:wrap;justify-content:center;border-bottom:1px solid var(--line)}
+.expect li{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+@media (max-width:429px){.expect{gap:12px 18px}.expect li{gap:7px;letter-spacing:.08em;font-size:12.5px}}
+.expect svg{width:20px;height:20px;flex:none;color:var(--gold)}
+form{display:flex;gap:10px;margin-top:22px}
+input{flex:1 1 0;min-width:0;height:56px;border-radius:16px;border:1px solid var(--line);background:#0a0a0a;color:var(--text);
+  padding:0 14px 0 16px;font:inherit;font-size:16px}
+input::placeholder{color:#8a8a8a}
+input:focus{outline:none;border-color:transparent;box-shadow:0 0 0 2px var(--gold)}
+button{height:56px;padding:0 18px 0 20px;border-radius:16px;border:0;background:#000;color:#fff;font:inherit;font-size:16px;font-weight:600;cursor:pointer;flex:0 0 auto;
+  display:inline-flex;align-items:center;gap:8px;box-shadow:0 0 0 1px var(--line);transition:box-shadow .25s ease,transform .25s cubic-bezier(.2,.7,.2,1)}
+button .arr{display:inline-block;transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+button:hover{box-shadow:0 0 0 2px var(--gold);transform:translateY(-2px)}
+button:hover .arr{transform:translateX(4px)}
+button:active{transform:translateY(0)}
+@media (prefers-reduced-motion:reduce){button,button .arr{transition:none}button:hover{transform:none}button:hover .arr{transform:none}}
+.ok{margin:14px 0 0;font-size:15px;color:var(--gold)}
+
+footer{margin-top:52px;font-size:14px;color:#8f8f8f;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+footer a{text-decoration:none}
+
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}.d4{animation-delay:.42s}
+@keyframes rise{from{opacity:.001;transform:translateY(18px)}}
+@media (prefers-reduced-motion:reduce){.rise{animation:none}}
+
+.back{position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  background:rgba(30,30,30,.85);backdrop-filter:blur(8px);padding:8px 12px;border-radius:999px;text-decoration:none;color:var(--muted);z-index:5}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+  <h1 class="rise d1">Telling <em>beautiful</em> stories.</h1>
+
+  <nav class="pills rise d2" aria-label="Social">
+    <a class="pill" href="https://youtube.com/@kurtiswin" target="_blank" rel="noopener" aria-label="YouTube: @kurtiswin">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4.5"/><path d="M10.2 9.2v5.6l4.8-2.8z" fill="currentColor"/></svg>@kurtiswin</a>
+    <a class="pill" href="https://www.instagram.com/kurtiswin" target="_blank" rel="noopener" aria-label="Instagram: @kurtiswin">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>@kurtiswin</a>
+  </nav>
+
+  <p class="story rise d3">I got injured at <i>nine</i> and never got to chase the dream. So now I build things that help other people chase theirs: <a class="chip c-jb" href="https://www.javabonito.co.uk" target="_blank" rel="noopener"><img src="../icons/icon-jb.png" alt="">Java&nbsp;Bonito</a>, coffee that gives 5% back to football, <a class="chip c-wfc" href="https://www.wooltonfc.co.uk" target="_blank" rel="noopener"><img class="round" src="../icons/icon-wfc.png" alt="">Woolton&nbsp;FC</a>, where I coach at the UK's biggest grassroots club, and <a class="chip c-sff" href="https://www.storiesfromfootball.co.uk" target="_blank" rel="noopener"><img src="../icons/icon-sff.png" alt="">Stories&nbsp;from&nbsp;Football</a>, because everyone has a <i>beautiful</i> story to tell.</p>
+
+  <section class="card rise d4" id="join" aria-labelledby="join-h">
+    <div class="film">
+      <video src="film.mp4" poster="film-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Short film: making coffee and coaching at Woolton FC"></video>
+    </div>
+    <div class="signup">
+      <h2 class="eyebrow" id="join-h">What to expect</h2>
+      <ul class="expect">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/><circle cx="17" cy="9" r="2.4"/><path d="M16.2 14.6c2.6.3 4.3 2.5 4.3 5.4"/></svg>People</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.8-6.5-11a6.5 6.5 0 0 1 13 0c0 5.2-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Places</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg>The build</li>
+      </ul>
+      <form data-kit>
+        <label class="sr" for="a-email">Email address</label>
+        <input id="a-email" type="email" name="email_address" placeholder="name@email.com" autocomplete="email" required>
+        <button type="submit">Sign up <span class="arr" aria-hidden="true">→</span></button>
+      </form>
+      <p class="ok" hidden>You're in. Check your inbox to confirm.</p>
+    </div>
+  </section>
+
+  <footer><span>© 2026 Kurtis Windrow</span></footer>
+</main>
+
+<script>
+document.querySelectorAll('form[data-kit]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.hidden=true;f.nextElementSibling.hidden=false;}));
+</script>
+</body>
+</html>

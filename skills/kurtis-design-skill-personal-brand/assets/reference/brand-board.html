@@ -1,0 +1,139 @@
+<title>KurtisWin - Design Board</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap">
+<style>
+/* KurtisWin brand board: one black column. Header, foundations (colour, type, pieces), then the site itself on phone and laptop. */
+:root{
+  --bg:#000; --panel:#000; --line:rgba(255,255,255,.12);
+  --text:#fff; --muted:#b3b3b3; --gold:#FFC65C;
+  --sans:"Poppins",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;font-weight:400;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1180px;margin:0 auto;padding-block:72px 96px;display:flex;flex-direction:column;gap:56px}
+.label{font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
+
+header{text-align:center;display:flex;flex-direction:column;align-items:center}
+h1{font-weight:600;font-size:clamp(2.6rem,8vw,5rem);letter-spacing:-.035em;line-height:1.02;margin:0;text-wrap:balance}
+h1 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--gold);font-size:1.12em;line-height:.9;letter-spacing:-.01em}
+.intro{color:var(--muted);max-width:52ch;margin:24px 0 0;font-size:17px;font-weight:300;text-wrap:pretty}
+
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.panel{background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);border-radius:24px;padding:26px;min-width:0}
+.panel h2{margin:0 0 18px}
+
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.sw{display:flex;flex-direction:column;gap:8px;font-size:11px;color:var(--muted);min-width:0;line-height:1.4}
+.sw i{display:block;aspect-ratio:1;border-radius:14px;box-shadow:inset 0 0 0 1px var(--line)}
+.sw b{color:var(--text);font-weight:500}
+.rule{margin-top:18px;font-size:14px;color:var(--muted);font-weight:300}
+
+.type p{margin:0}
+.type .t1{font-size:38px;font-weight:600;letter-spacing:-.035em;line-height:1.1}
+.type .t2{font-family:var(--serif);font-style:italic;font-size:42px;color:var(--gold);line-height:1.1;margin-top:14px}
+.type .t3{font-size:17px;font-weight:300;margin-top:14px}
+.type .t4{font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:14px}
+.type small{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+
+.parts{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.row{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 18px 0 14px;border-radius:999px;background:#000;
+  box-shadow:0 0 0 1px var(--line);font-size:15px;font-weight:500;text-decoration:none;transition:box-shadow .25s}
+.pill:hover{box-shadow:0 0 0 2px var(--gold)}
+.pill svg{width:20px;height:20px;color:var(--gold)}
+.chip{font-weight:500;text-decoration:none;white-space:nowrap}
+.chip img{display:inline-block;width:1.4em;height:1.4em;margin-right:.35em;border-radius:.38em;vertical-align:-.36em;background:#000;
+  box-shadow:0 0 0 1px var(--line);transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+.chip img.round{border-radius:50%;box-shadow:none}
+.chip:hover img{transform:scale(1.22) rotate(-8deg)}
+.topics{display:flex;flex-wrap:wrap;gap:12px 22px}
+.topics span{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.topics svg{width:20px;height:20px;color:var(--gold)}
+.btn{height:52px;padding:0 18px 0 20px;border-radius:16px;background:#000;color:#fff;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;flex:0 0 auto;
+  box-shadow:0 0 0 1px var(--line);transition:box-shadow .25s,transform .25s cubic-bezier(.2,.7,.2,1)}
+.btn:hover{box-shadow:0 0 0 2px var(--gold);transform:translateY(-2px)}
+.field{height:52px;flex:1 1 0;min-width:0;border-radius:16px;background:#0a0a0a;box-shadow:inset 0 0 0 1px var(--line);display:flex;align-items:center;padding:0 16px;color:#8a8a8a;overflow:hidden;white-space:nowrap}
+.form{display:flex;gap:10px;width:100%}
+
+.site{display:grid;gap:20px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:880px){.site{grid-template-columns:340px minmax(0,1fr);align-items:start}}
+.phone{height:640px;overflow-y:auto;border-radius:28px;box-shadow:inset 0 0 0 1px var(--line);background:#000;overscroll-behavior:contain}
+.phone img,.laptop img{display:block;width:100%;height:auto}
+.laptop{border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+.cap{font-size:12px;color:var(--muted);margin:10px 0 0}
+.open{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 22px;border-radius:16px;background:#000;box-shadow:0 0 0 1px var(--line);
+  text-decoration:none;font-weight:600;margin-top:20px;transition:box-shadow .25s}
+.open:hover{box-shadow:0 0 0 2px var(--gold)}
+@media (prefers-reduced-motion:reduce){.chip img,.btn,.pill,.open{transition:none}.chip:hover img,.btn:hover{transform:none}}
+</style>
+
+<main class="wrap">
+  <header>
+    <p class="label">KurtisWin · Personal brand design board</p>
+    <h1>Telling <em>beautiful</em> stories.</h1>
+    <p class="intro">The look and feel of everything KurtisWin: black, white and one touch of gold, Poppins with a serif italic for the words that matter, and plenty of space. Use it for the website, socials, thumbnails, Java Bonito, Stories from Football and anything else that's yours.</p>
+  </header>
+
+  <section class="grid" aria-label="Foundations">
+    <div class="panel">
+      <h2 class="label">Colour</h2>
+      <div class="swatches">
+        <div class="sw"><i style="background:#000"></i><b>Black</b>#000000<br>Background</div>
+        <div class="sw"><i style="background:#fff"></i><b>White</b>#FFFFFF<br>Text</div>
+        <div class="sw"><i style="background:#FFC65C"></i><b>Gold</b>#FFC65C<br>Accent</div>
+        <div class="sw"><i style="background:rgba(255,255,255,.12)"></i><b>Line</b>White 12%<br>Borders</div>
+      </div>
+      <p class="rule">Gold is the accent, never the background: one word in a headline, icons and the hover ring.</p>
+    </div>
+    <div class="panel type">
+      <h2 class="label">Type</h2>
+      <p class="t1">Poppins SemiBold</p><small>Headlines</small>
+      <p class="t2">beautiful</p><small>Instrument Serif italic, for one or two feeling words</small>
+      <p class="t3">Poppins Light for the story and body text.</p><small>Body</small>
+      <p class="t4">Poppins Medium · labels</p><small>Uppercase labels, widely spaced</small>
+    </div>
+    <div class="panel">
+      <h2 class="label">Pieces</h2>
+      <div class="parts">
+        <div class="row">
+          <a class="pill" href="https://youtube.com/@kurtiswin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4.5"/><path d="M10.2 9.2v5.6l4.8-2.8z" fill="currentColor"/></svg>@kurtiswin</a>
+          <a class="pill" href="https://www.instagram.com/kurtiswin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>@kurtiswin</a>
+        </div>
+        <div class="row">
+          <a class="chip" href="https://www.javabonito.co.uk" target="_blank" rel="noopener"><img src="../icons/icon-jb.png" alt="">Java Bonito</a>
+          <a class="chip" href="https://www.wooltonfc.co.uk" target="_blank" rel="noopener"><img class="round" src="../icons/icon-wfc.png" alt="">Woolton FC</a>
+          <a class="chip" href="https://www.storiesfromfootball.co.uk" target="_blank" rel="noopener"><img src="../icons/icon-sff.png" alt="">Stories from Football</a>
+        </div>
+        <div class="topics">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/><circle cx="17" cy="9" r="2.4"/><path d="M16.2 14.6c2.6.3 4.3 2.5 4.3 5.4"/></svg>People</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.8-6.5-11a6.5 6.5 0 0 1 13 0c0 5.2-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Places</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg>The build</span>
+        </div>
+        <div class="form"><span class="field">name@email.com</span><span class="btn">Sign up <span aria-hidden="true">→</span></span></div>
+      </div>
+      <p class="rule">Everything sits on black with a thin outline. On hover: a gold ring, and the project icons zoom and twist.</p>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="site-h">
+    <h2 class="label" id="site-h">The website</h2>
+    <div class="site">
+      <div>
+        <div class="phone" tabindex="0" aria-label="Phone view of the site, scrollable"><img src="site-phone.jpg" alt="The KurtisWin site on a phone: headline, social pills, story with project links, film and email sign-up" loading="lazy"></div>
+        <p class="cap">Phone · scroll inside</p>
+      </div>
+      <div>
+        <div class="laptop"><img src="site-laptop.jpg" alt="The KurtisWin site on a laptop" loading="lazy"></div>
+        <p class="cap">Laptop</p>
+        <a class="open" href="site.html">Open the site <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
