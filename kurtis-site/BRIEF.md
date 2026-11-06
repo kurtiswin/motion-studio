@@ -51,3 +51,5 @@
 
 - 2026-11-06: Video halved (half-width clip framed in the card); What to expect + topic icons removed, signup is just email + button.
 
+- 2026-11-06: Single 620px column: headline, story, video and email form share the same edges; card frame removed.
+

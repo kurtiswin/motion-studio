@@ -14,7 +14,7 @@ Read before every piece of work. Add to it after every piece of work and every f
 - **2026-11 · Real logos, done the brand's way.** Letter tiles and an invented "JB" monogram were rejected; the Java Bonito icon must match its own favicon (whole wordmark across a black square).
 - **2026-11 · Black everything.** Grey cards and pill fills read as cheap; black with a hairline and a gold hover ring reads premium.
 - **2026-11 · Space = luxury.** He asked for the hero lower and slightly more space between blocks. Err towards more air.
-- **2026-11 · Video smaller than first thought.** Started at 1.2× the text width (Dalen), then halved: a half-width 4:3 clip framed inside the black card. Keep video supporting, not dominant.
+- **2026-11 · One column, shared edges.** Video went 1.2× text width → half width → finally exactly the column width, with the email form the same width and the card frame dropped. Everything lines up to the headline's edges.
 - **2026-11 · Gold for one word only.** "nine" went gold, then back to white; only "beautiful" in the headline stays gold.
 - **2026-11 · He'll rename things himself.** He renamed the board "KurtisWin - Design Board" outside the session. Keep his names.
 

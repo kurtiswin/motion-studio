@@ -49,7 +49,7 @@ Keep the serif to one or two words per screen; that scarcity is what makes it fe
 
 ## 3. Layout and spacing
 
-- One centred column, max 760px; the media card can be wider than the text (700px on laptop vs ~580px of text, like Daniel Dalen's ratio of about 1.2×).
+- One centred column, max 620px (the headline's width on a laptop). Headline, story, video and email form all share exactly the same left and right edges on every screen; blank space either side.
 - Side gutter at least 16px (`max(16px, env(safe-area-inset-left))`).
 - Hero sits low: top padding `clamp(110px, 18vh, 190px)`.
 - Gaps: headline → pills 40px; pills → story 46px; story → card 60px (72px on laptop); card → footer 52px.
@@ -78,11 +78,12 @@ Content: gold outline platform icon + "@kurtiswin" in white. Give the link an `a
 ```
 Keep the link inline (not flex), so commas sit directly after the name. Each project link should land on its own line of the paragraph; check after changing widths.
 
-### Media + signup card
+### Video + signup
 ```css
-.card{border-radius:32px;overflow:hidden;background:#000;box-shadow:inset 0 0 0 1px var(--line)}
-.film{aspect-ratio:4/3;width:50%;margin:clamp(22px,5vw,40px) auto 0;border-radius:20px}  /* half-width clip framed inside the card; no caption */
-@media (min-width:900px){.card{width:700px}.card .signup{max-width:680px;margin:0 auto}}
+.card{width:100%;margin-top:60px}                       /* no frame: just the column */
+@media (min-width:900px){.card{margin-top:72px}}
+.film{aspect-ratio:4/3;width:100%;border-radius:24px;overflow:hidden}  /* column-wide, no caption */
+.signup{padding:16px 0 0}                                /* form is column-wide too */
 ```
 Video: `autoplay muted loop playsinline preload="metadata"` with a poster frame.
 
