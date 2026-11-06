@@ -141,7 +141,7 @@ Project logos (`assets/icons/`):
 
 Approved copy:
 - Headline: "Telling *beautiful* stories."
-- Story: "I got injured at *nine* and never got to chase the dream. So now I build things that help other people chase theirs: [Java Bonito], coffee that gives 5% back to football, [Woolton FC], where I coach at the UK's biggest grassroots club, and [Stories from Football], because everyone has a *beautiful* story to tell."
+- Story: "I got injured at *nine* and never got to chase the dream. So now I build things that help other people chase theirs: [Java Bonito], coffee that gives 5% back to support dreams, [Woolton FC], where I coach at the largest grassroots club in the UK, and [Stories from Football], because everyone has a *beautiful* story to tell."
 - Older lines from his Carrd draft, fine to reuse: "To transform lives through football." "Connecting the world through conversation, because everyone has a beautiful story to tell." "Coffee for football – giving 5% back from every coffee sold to support dreams." "Join the Club."
 
 Tone: warm, first person, short sentences, football and community first. No hype words.

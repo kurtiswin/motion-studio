@@ -47,3 +47,5 @@
 
 - 2026-11-06: Board turned into the KurtisWin brand board (concepts B and C removed). Site page renamed design-board/site.html.
 
+- 2026-11-06: Story copy: Java Bonito 'coffee that gives 5% back to support dreams'; Woolton FC 'where I coach at the largest grassroots club in the UK'.
+
