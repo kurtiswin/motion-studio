@@ -23,18 +23,18 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);fon
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
-.wrap{max-width:760px;margin:0 auto;padding-block:clamp(64px,11vh,120px) 48px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.wrap{max-width:760px;margin:0 auto;padding-block:clamp(110px,18vh,190px) 48px;display:flex;flex-direction:column;align-items:center;text-align:center}
 
 h1{font-size:clamp(2.9rem,10.5vw,5.4rem);font-weight:600;letter-spacing:-.035em;line-height:1.02;margin:0;text-wrap:balance}
 h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.01em;color:var(--gold);font-size:1.12em;line-height:.9}
 
-.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:40px}
 .pill{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 18px 0 14px;border-radius:999px;background:#000;
   box-shadow:0 0 0 1px var(--line);text-decoration:none;font-size:15px;font-weight:500;transition:box-shadow .25s ease}
 .pill:hover{box-shadow:0 0 0 2px var(--gold)}
 .pill svg{width:20px;height:20px;flex:none}
 
-.story{margin:34px 0 0;font-size:clamp(1.05rem,2.4vw,1.5rem);font-weight:300;line-height:1.75;color:var(--text);max-width:39ch;text-wrap:pretty}
+.story{margin:46px 0 0;font-size:clamp(1.05rem,2.4vw,1.5rem);font-weight:300;line-height:1.75;color:var(--text);max-width:39ch;text-wrap:pretty}
 .story i{font-family:var(--serif);font-size:1.22em;line-height:1;color:var(--text)}
 .story i.gold{color:var(--gold)}
 /* Inline project links: plain inline text so commas sit right against them. */
@@ -43,9 +43,12 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:
 .chip img{display:inline-block;width:1.4em;height:1.4em;margin-right:.35em;border-radius:.38em;object-fit:cover;
   vertical-align:-.36em;background:#000;box-shadow:0 0 0 1px var(--line)}
 .chip img.round{border-radius:50%;box-shadow:none}
+.chip img{transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+.chip:hover img,.chip:focus-visible img{transform:scale(1.22) rotate(-8deg)}
+@media (prefers-reduced-motion:reduce){.chip img{transition:none}.chip:hover img,.chip:focus-visible img{transform:none}}
 
 /* Film + signup card */
-.card{width:100%;max-width:100%;margin-top:60px;border-radius:32px;overflow:hidden;background:var(--surface);text-align:left}
+.card{width:100%;max-width:100%;margin-top:60px;border-radius:32px;overflow:hidden;background:#000;box-shadow:inset 0 0 0 1px var(--line);text-align:left}
 @media (min-width:900px){.card{width:700px;max-width:none;margin-top:72px}.card .signup{max-width:600px;margin:0 auto}}
 .film{position:relative;aspect-ratio:4/3;max-width:100%;background:#0a0a0a;overflow:hidden}
 .film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
