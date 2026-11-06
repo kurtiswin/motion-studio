@@ -81,12 +81,12 @@ Keep the link inline (not flex), so commas sit directly after the name. Each pro
 ### Media + signup card
 ```css
 .card{border-radius:32px;overflow:hidden;background:#000;box-shadow:inset 0 0 0 1px var(--line)}
-.film{aspect-ratio:4/3}  /* matches the source clips; no caption over the video */
+.film{aspect-ratio:4/3;width:50%;margin:clamp(22px,5vw,40px) auto 0;border-radius:20px}  /* half-width clip framed inside the card; no caption */
 @media (min-width:900px){.card{width:700px}.card .signup{max-width:680px;margin:0 auto}}
 ```
 Video: `autoplay muted loop playsinline preload="metadata"` with a poster frame.
 
-Signup block, top to bottom: centred label "WHAT TO EXPECT" (12px, .24em, muted) → centred row of topic items (gold icon + uppercase label) → hairline → email field + button side by side. Current topics: People, Places, The build. No descriptions after the topics and no "no spam" line (both removed).
+Signup block: just the email field and button side by side under the video. The "What to expect" label and topic icons (People, Places, The build) were tried and removed; the icons are kept in section 5 for other uses.
 
 ### Email field and button
 ```css

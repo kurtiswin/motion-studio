@@ -10,11 +10,11 @@ Read before every piece of work. Add to it after every piece of work and every f
 - **2026-11 · No avatar or logo above the headline.** Both were tried; he removed them. Start with the headline.
 - **2026-11 · Pills show the handle, not the platform name.** Icon + "@kurtiswin".
 - **2026-11 · Brand-coloured outline icons, not platform colours.** Red YouTube and gradient Instagram were replaced with gold outlines; gold beat white.
-- **2026-11 · Fewer words.** He cut the video caption, the visible card heading, topic descriptions and the "no spam" line, and cut eight topics to three. Default to labels only, and few of them.
+- **2026-11 · Fewer words (signup ended as just email + button).** He cut the video caption, the visible card heading, topic descriptions and the "no spam" line, and cut eight topics to three. Default to labels only, and few of them.
 - **2026-11 · Real logos, done the brand's way.** Letter tiles and an invented "JB" monogram were rejected; the Java Bonito icon must match its own favicon (whole wordmark across a black square).
 - **2026-11 · Black everything.** Grey cards and pill fills read as cheap; black with a hairline and a gold hover ring reads premium.
 - **2026-11 · Space = luxury.** He asked for the hero lower and slightly more space between blocks. Err towards more air.
-- **2026-11 · Video big but not full-bleed on laptop.** About 1.2× the text width, like Daniel Dalen's.
+- **2026-11 · Video smaller than first thought.** Started at 1.2× the text width (Dalen), then halved: a half-width 4:3 clip framed inside the black card. Keep video supporting, not dominant.
 - **2026-11 · Gold for one word only.** "nine" went gold, then back to white; only "beautiful" in the headline stays gold.
 - **2026-11 · He'll rename things himself.** He renamed the board "KurtisWin - Design Board" outside the session. Keep his names.
 

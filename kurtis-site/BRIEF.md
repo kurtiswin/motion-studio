@@ -49,3 +49,5 @@
 
 - 2026-11-06: Story copy: Java Bonito 'coffee that gives 5% back to support dreams'; Woolton FC 'where I coach at the largest grassroots club in the UK'.
 
+- 2026-11-06: Video halved (half-width clip framed in the card); What to expect + topic icons removed, signup is just email + button.
+
